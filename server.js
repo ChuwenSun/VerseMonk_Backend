@@ -11,8 +11,8 @@ app.use(cors());
 
 // Middleware to parse JSON bodies
 app.use(express.json());
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+app.listen(PORT, () => {
+  console.log(`Example app listening on port ${PORT}`)
 })
 // Connect to MongoDB
 mongoose.connect(process.env.mongoDB_access_string, {
