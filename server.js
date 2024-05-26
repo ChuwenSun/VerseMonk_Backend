@@ -7,11 +7,11 @@ const annotationRoutes = require('./routes/annotation');
 const app = express();
 const PORT = process.env.PORT || 3000;// Set the port directly
 
-app.use(cors({
-  origin: ['https://chwensun.github.io', 'https://chwensun.github.io/VerseMonk_DEMO'],
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 // Middleware to parse JSON bodies
 app.use(express.json());
