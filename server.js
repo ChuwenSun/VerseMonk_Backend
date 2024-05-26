@@ -8,14 +8,19 @@ const app = express();
 const PORT = process.env.PORT || 3000;// Set the port directly
 
 app.use(cors({
-  origin: 'https://chuwensun.github.io/VerseMonk_DEMO/',
+  origin: [
+    'https://chwensun.github.io',
+    'https://chwensun.github.io/VerseMonk_DEMO'
+  ],
+  methods: 'GET,POST,PUT,DELETE,OPTIONS',
+  allowedHeaders: 'Content-Type,Authorization'
 }));
 
 // Middleware to parse JSON bodies
 app.use(express.json());
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://chuwensun:Ssccww1015!@songlyricssample.a0ai203.mongodb.net/lyricsData', {
+mongoose.connect(process.env.mongoDB_access_string, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }).then(() => {
