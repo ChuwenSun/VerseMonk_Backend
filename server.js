@@ -12,8 +12,8 @@ app.use(cors({
     'https://chwensun.github.io',
     'https://chwensun.github.io/VerseMonk_DEMO'
   ],
-  methods: 'GET,POST,PUT,DELETE,OPTIONS',
-  allowedHeaders: 'Content-Type,Authorization'
+  methods: ['GET','POST','PUT','DELETE','OPTIONS'],
+  allowedHeaders: ['Content-Type','Authorization']
 }));
 
 // Middleware to parse JSON bodies
