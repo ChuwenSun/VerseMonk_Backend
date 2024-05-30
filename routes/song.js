@@ -17,8 +17,8 @@ router.get('/filter', async (req, res) => {
         query.year = { $gte: 1980, $lte: 1989 };
       } else if (year === '1990s') {
         query.year = { $gte: 1990, $lte: 1999 };
-      } else if (year === '2000s') {
-        query.year = { $gte: 2000, $lte: 2009 };
+      } else if (year === '2000 ->') {
+        query.year = { $gte: 2000, $lte: 2025 };
       } else {
         query.year = year; // In case of exact year
       }
